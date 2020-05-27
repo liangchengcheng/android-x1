@@ -1,7 +1,8 @@
-package com.hdsx
+package com.hdsx.x1
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.hdsx.R
 
 class MainActivity : AppCompatActivity() {
 
