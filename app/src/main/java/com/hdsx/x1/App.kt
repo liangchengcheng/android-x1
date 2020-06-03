@@ -1,7 +1,11 @@
 package com.hdsx.x1
 
 import android.app.Application
+import com.hdsx.x1.common.ActivityLifecycleCallbacksAdapter
+import com.hdsx.x1.model.store.SettingsStore
+import com.hdsx.x1.util.core.ActivityManager
 import com.hdsx.x1.util.isMainProcess
+import com.hdsx.x1.util.setNightMode
 
 class App: Application() {
     companion object {
@@ -18,10 +22,22 @@ class App: Application() {
     }
 
     private fun init() {
-
+        registerActivityCallbacks()
+        setDayNightMode()
     }
 
-    private fun rigesterActivityCallbacks() {
+    private fun setDayNightMode() {
+        setNightMode(SettingsStore.getNightMode())
+    }
 
+    private fun registerActivityCallbacks() {
+        registerActivityLifecycleCallbacks(ActivityLifecycleCallbacksAdapter(
+            onActivityCreated = { activity, _ ->
+                ActivityManager.activities.add(activity)
+            },
+            onActivityDestroyed = { activity ->
+                ActivityManager.activities.remove(activity)
+            }
+        ))
     }
 }
