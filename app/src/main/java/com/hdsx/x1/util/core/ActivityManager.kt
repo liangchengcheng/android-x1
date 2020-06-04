@@ -19,4 +19,15 @@ object ActivityManager {
         }
         currentActivity.startActivity(intent)
     }
+
+    /**
+     * finish指定的一个或多个Activity
+     */
+    fun finish(vararg clazz: Class<out Activity>) {
+        activities.forEach { activiy ->
+            if (clazz.contains(activiy::class.java)) {
+                activiy.finish()
+            }
+        }
+    }
 }
