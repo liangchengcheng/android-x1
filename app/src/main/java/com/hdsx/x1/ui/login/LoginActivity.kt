@@ -4,6 +4,7 @@ import android.view.inputmethod.EditorInfo
 import androidx.lifecycle.Observer
 import com.hdsx.R
 import com.hdsx.x1.ui.base.BaseVmActivity
+import com.hdsx.x1.ui.register.RegisterActivity
 import com.hdsx.x1.util.core.ActivityManager
 import kotlinx.android.synthetic.main.activity_login.*
 
@@ -21,7 +22,7 @@ class LoginActivity : BaseVmActivity<LoginViewModel>() {
 
         // 注册界面
         tvGoRegister.setOnClickListener {
-            // ActivityManager.start(RegisterActivity::class.java)
+            ActivityManager.start(RegisterActivity::class.java)
         }
 
         // 密码输入框,不是在我们对EditText进行编辑时触发，而是在我们编辑完之后点击软键盘上的各种键才会触发
