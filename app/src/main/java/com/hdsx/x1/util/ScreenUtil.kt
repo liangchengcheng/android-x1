@@ -2,9 +2,9 @@ package com.hdsx.x1.util
 
 import android.content.Context
 
-fun getScreenHeight(context: Context) = context.resources.displayMetrics.heightPixels
+fun getSreenHeight(context: Context) = context.resources.displayMetrics.heightPixels
 
-fun getScreenWidth(context: Context) = context.resources.displayMetrics.widthPixels
+fun getSreenWidth(context: Context) = context.resources.displayMetrics.widthPixels
 
 /**
  * 获取状态栏的高度
