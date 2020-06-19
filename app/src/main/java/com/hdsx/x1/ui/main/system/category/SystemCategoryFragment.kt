@@ -29,7 +29,9 @@ class SystemCategoryFragment : BottomSheetDialogFragment() {
             categoryList: ArrayList<Category>
         ): SystemCategoryFragment {
             return SystemCategoryFragment().apply {
-                arguments = Bundle().apply { putParcelableArrayList(CATEGORY_LIST, categoryList) }
+                arguments = Bundle().apply {
+                    putParcelableArrayList(CATEGORY_LIST, categoryList)
+                }
             }
         }
     }
